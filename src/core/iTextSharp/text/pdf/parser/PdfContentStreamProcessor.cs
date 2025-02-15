@@ -136,7 +136,7 @@ namespace iTextSharp.text.pdf.parser {
             cachedFonts.TryGetValue(ind.Number, out wrFont);
             if (wrFont == null || wrFont.Target == null) {
                 font = new CMapAwareDocumentFont(ind);
-                cachedFonts[ind.Number] = new WeakReference(font,true);
+                cachedFonts[ind.Number] = new WeakReference(font,false);
             }else {
                 font = wrFont.Target as CMapAwareDocumentFont;
             }
